@@ -1,0 +1,24 @@
+﻿@page "/syncfusiontest"
+<h3>SyncfusionTest</h3>
+
+
+@using Syncfusion.Blazor.Kanban
+
+<SfKanban TValue="TasksModel">
+    <KanbanColumns>
+        <KanbanColumn HeaderText="Neu" KeyField="@(new List<string>() {"Neu"})"></KanbanColumn>
+        <KanbanColumn HeaderText="In Arbeit" KeyField="@(new List<string>() {"In Arbeit"})"></KanbanColumn>
+        <KanbanColumn HeaderText="Prüfung" KeyField="@(new List<string>() {"Prüfung"})"></KanbanColumn>
+        <KanbanColumn HeaderText="Beendet" KeyField="@(new List<string>() {"Beendet"})"></KanbanColumn>
+    </KanbanColumns>
+</SfKanban>
+
+@code {
+    public class TasksModel
+    {
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string Status { get; set; }
+        public string Summary { get; set; }
+    }
+}
